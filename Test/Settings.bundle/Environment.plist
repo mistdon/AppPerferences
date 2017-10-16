@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Environment Setting</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Environment Choice??</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Sub Title</string>
+			<key>Key</key>
+			<string>subTitle_perference</string>
+			<key>DefaultValue</key>
+			<string>sub title</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>SubEnvironment</string>
+			<key>Key</key>
+			<string>subEnvironment_preference</string>
+			<key>DefaultValue</key>
+			<string>QA</string>
+			<key>Values</key>
+			<array>
+				<string>QA</string>
+				<string>FE</string>
+				<string>BE</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>QA</string>
+				<string>FE</string>
+				<string>BE</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
