@@ -2,8 +2,6 @@
 
 <img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/one.png" width="180">
 <img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/two.png" width="180">
-<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/two.png" width="180">
-
 
 ### 偏好设置
 iPhone自定的设置里面，可以对WLAN，Location等权限进行设置，我们也可以增加一个自己的自定义设置。原理就是利用Setting.Bundle和NSUserDefaults的属性，生成一个全局的变量，以供App内部使用。
