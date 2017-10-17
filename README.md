@@ -1,8 +1,8 @@
 # AppPerferences
 
-<img src="https://github.com/momo13014/AppPerferences/tree/master/screenshots/one.png" width="180">
-<img src="https://github.com/momo13014/AppPerferences/tree/master/screenshots/two.png" width="180">
-<img src="https://github.com/momo13014/AppPerferences/tree/master/screenshots/three.png" width="180">
+<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/one.png" width="180">
+<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/two.png" width="180">
+<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/two.png" width="180">
 
 
 ### 偏好设置
