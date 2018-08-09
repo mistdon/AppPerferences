@@ -1,8 +1,14 @@
 # AppPerferences
 
-![Perferences Setting One](./screenshots/one.png)
 
-![Perferences Setting Two](./screenshots/two.png)
+
+
+
+<figure class="third"> <img src="./screenshots/one.png" width="30%"> <img src="./screenshots/two.png" width="30%"> <img src="./screenshots/three.png" width="30%"> </figure>
+
+
+
+
 
 ### 偏好设置
 iPhone自定的设置里面，可以对WLAN，Location等权限进行设置，我们也可以增加一个自己的自定义设置。原理就是利用Setting.Bundle和NSUserDefaults的属性，生成一个全局的变量，以供App内部使用。
@@ -25,6 +31,7 @@ Settings.bundle/
           Root.strings
  ```
 其中的Root.plist文件就是我们要设置的偏好plist文件, 具体编写规则见*参考链接1*
+
 ##### 3.获取和更改
 
 每一个属性都有一个“Identifier”的值, 通过获取着key获取实际的value
