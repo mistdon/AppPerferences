@@ -1,7 +1,8 @@
 # AppPerferences
 
-<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/one.png" width="180">
-<img src="https://github.com/momo13014/AppPerferences/blob/master/screenshots/two.png" width="180">
+![Perferences Setting One](./screenshots/one.png)
+
+![Perferences Setting Two](./screenshots/two.png)
 
 ### 偏好设置
 iPhone自定的设置里面，可以对WLAN，Location等权限进行设置，我们也可以增加一个自己的自定义设置。原理就是利用Setting.Bundle和NSUserDefaults的属性，生成一个全局的变量，以供App内部使用。
@@ -13,17 +14,21 @@ iPhone的设置里面提供了7中“设置类型”，供开发者自行设置�
 [每种类型的介绍及里面的自定义设置](https://developer.apple.com/library/content/documentation/PreferenceSettings/Conceptual/SettingsApplicationSchemaReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007071)
 
 ### 如何设置
-1.  选择File -> New -> New File -> Sources -> Setting.bundle
-2.  Setting.bundle就是我们需要的设置文件，在里面默认有两个文件
+##### 1. 选择File -> New -> New File -> Sources -> Setting.bundle
+
+##### 2. Setting.bundle就是我们需要的设置文件，在里面默认有两个文件 
+
  ```
 Settings.bundle/
     Root.plist
     en.lproj/
           Root.strings
-```
+ ```
 其中的Root.plist文件就是我们要设置的偏好plist文件, 具体编写规则见*参考链接1*
-3.  获取和更改
+##### 3.获取和更改
+
 每一个属性都有一个“Identifier”的值, 通过获取着key获取实际的value
+
 ```
 // 获取
   NSArray *identifiers = @[@"play_sounds_preference",
@@ -40,13 +45,16 @@ Settings.bundle/
   [[NSUserDefaults standardUserDefaults] setObject:@"DON" forKey:@"user_name"];
   [[NSUserDefaults standardUserDefaults] synchronize];
 ```
-4. 添加更多的plist文件和本地化文件
-    参考Root.plist文件和Root.strings(本地化)实现更多的设置条件。
-    如果实际中需要针对不同的类型有更多的设置，可以通过China Pane实现。
-    首先选中一个Row，右击Add Row，将Type设置为PSChildPaneSpecifier，
-   
-    [Child Pane Element Guide](https://developer.apple.com/library/content/documentation/PreferenceSettings/Conceptual/SettingsApplicationSchemaReference/Articles/PSChildPaneSpecifier.html#//apple_ref/doc/uid/TP40007017-SW1)
-5. 自定义参数的设置
+##### 4. 添加更多的plist文件和本地化文件
+
+参考Root.plist文件和Root.strings(本地化)实现更多的设置条件。
+如果实际中需要针对不同的类型有更多的设置，可以通过China Pane实现。
+首先选中一个Row，右击Add Row，将Type设置为PSChildPaneSpecifier，
+
+[Child Pane Element Guide](https://developer.apple.com/library/content/documentation/PreferenceSettings/Conceptual/SettingsApplicationSchemaReference/Articles/PSChildPaneSpecifier.html#//apple_ref/doc/uid/TP40007017-SW1)
+
+##### 5. 自定义参数的设置
+
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"subTitle_perference":@"sub title",
@@ -56,11 +64,11 @@ Settings.bundle/
     return YES;
 }
 ```
-** 需要注意的是：在自定义的plist文件中，Identifier应该改为Key(首字母大写), 否则识别有问题
+**需要注意的是**：在自定义的plist文件中，Identifier应该改为Key(首字母大写), 否则识别有问题
 
 ### 应用
 
-  在APP环境测试的时候，我们可能需要在不同的环境中切换，以确保不同的环境中请求返回的结果。因此我们可以在自定义设置中通过切换不同的环境以达到在APP内环境切换的效果。
+在APP环境测试的时候，我们可能需要在不同的环境中切换，以确保不同的环境中请求返回的结果。因此我们可以在自定义设置中通过切换不同的环境以达到在APP内环境切换的效果。
 
 实践的项目：[Bootstrap](https://github.com/krzysztofzablocki/Bootstrap)
 
