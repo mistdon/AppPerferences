@@ -26,16 +26,24 @@
 //    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"user_name":@"大东哥"}];
 //    [[NSUserDefaults standardUserDefaults] synchronize];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    [[NSUserDefaults standardUserDefaults] setObject:@"DON" forKey:@"user_name"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"DON" forKey:@"user_name"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     /*
      参考文章： https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html#//apple_ref/doc/uid/10000059i-CH6-SW1
      
      */
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appearanceChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
 }
-
+/// UserDefaults更改后的通知：只在重新唤起App后触发
+- (void)appearanceChanged:(NSNotification *)notification{
+    [self printAllUserDefaultsInfo];
+}
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self printAllUserDefaultsInfo];
+}
+- (void)printAllUserDefaultsInfo{
     NSArray *identifiers = @[@"play_sounds_preference",
                              @"3D_Sound_preference",
                              @"user_name",

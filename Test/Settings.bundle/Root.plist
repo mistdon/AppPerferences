@@ -70,6 +70,26 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Key</key>
+			<string>version_preference</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Build</string>
+			<key>Key</key>
+			<string>build_preference</string>
+			<key>DefaultValue</key>
+			<string>1</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>Gravity</string>
@@ -93,6 +113,8 @@
 			<string>This is tiltle</string>
 			<key>Key</key>
 			<string>title_preference</string>
+			<key>DefaultValue</key>
+			<string>Appearance</string>
 		</dict>
 		<dict>
 			<key>Type</key>

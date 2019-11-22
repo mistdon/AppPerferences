@@ -71,7 +71,9 @@ Settings.bundle/
     return YES;
 }
 ```
-**需要注意的是**：在自定义的plist文件中，Identifier应该改为Key(首字母大写), 否则识别有问题
+**需要注意的是**：
+1. 在自定义的plist文件中，Identifier应该改为Key(首字母大写), 否则识别有问题
+2. Title内容，必须设置Default Value, 否则显示不出来
 
 ### 应用
 
@@ -82,3 +84,4 @@ Settings.bundle/
 ### 参考链接
 1. [Preferences and Settings Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html#//apple_ref/doc/uid/10000059i-CH6-SW14)
 2. [iOS App 偏好设置](http://chars.tech/2016/01/15/ios-preference-setting/)
+3. [Adding Setting to your iOS app](https://medium.com/@abhimuralidharan/adding-settings-to-your-ios-app-cecef8c5497)
